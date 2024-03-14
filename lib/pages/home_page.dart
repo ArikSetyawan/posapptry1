@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posapptry1/blocs/CashDrawer/cash_drawer_bloc.dart';
 import 'package:posapptry1/pages/invoice_print_page.dart';
+import 'package:posapptry1/pages/printing_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,6 +34,13 @@ class HomePage extends StatelessWidget {
                 newInvoice.printInvoice();
               },
               child: const Text("Print Invoice"),
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const PrintingPage()));
+              },
+              child: const Text("Print Invoice Via Bluetooth"),
             ),
             const SizedBox(height: 30),
             const Text("Cash Drawer Event Log", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),

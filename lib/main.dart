@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posapptry1/blocs/CashDrawer/cash_drawer_bloc.dart';
+import 'package:posapptry1/blocs/Printer/printer_bloc.dart';
 import 'package:posapptry1/pages/home_page.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => CashDrawerBloc())
+        BlocProvider(create: (context) => CashDrawerBloc()),
+        BlocProvider(create: (context) => PrinterBloc())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
